@@ -50,6 +50,8 @@ Para executar os testes Selenium, siga as etapas abaixo:
 
 ```
 mvn test
+Mvn clean -Dcucumber.options="--tags @NomeTag" test -Denv=NomeBrowser (Executar por tag e browser especifico)
+Mvn clean -Dtest=Testrunner test (Executar todos os testes)
 ```
 
 O Maven baixará as dependências necessárias, compilará o código do projeto e executará os testes.
