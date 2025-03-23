@@ -21,3 +21,4 @@ Feature: Pesquisa Amazon Chrome
     Examples: 
       | produto |
       | sab     |
+      | iph     |

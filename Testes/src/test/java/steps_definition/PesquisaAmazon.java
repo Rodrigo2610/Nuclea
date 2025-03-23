@@ -78,19 +78,49 @@ public class PesquisaAmazon extends Testrunner implements TestData {
 	public void sera_exibida_uma_lista_abaixo_da_barra_de_pesquisa_com_as_sugestoes_de_pesquisa_do_produto(
 			String Produto) throws Throwable {
 
-		Thread.sleep(500);
-		List<WebElement> elements = TestBase.driver
-				.findElements(By.xpath("/html/body/div/header/div/div/div/div/div/div/div/div/div"));
-		for (WebElement element : elements) {
-			Thread.sleep(500);
+		Thread.sleep(1000);
+		if (System.getProperty("env") == "mobile") {
+			List<WebElement> elements = TestBase.driver
+					.findElements(By.xpath("/html/body/div/header/div/div/form/div/div[/div/div/div/div/div/div/div"));
+			for (WebElement element : elements) {
+				Thread.sleep(1000);
 
-			String produtoLista = TestBase.driver
-					.findElement(By.xpath("/html/body/div/header/div/div/div/div/div/div/div/div/div")).getText();
-			assert (produtoLista.contains(Produto));
+				String produtoLista = TestBase.driver
+						.findElement(
+								By.xpath("/html/body/div/header/div/div/form/div/div[/div/div/div/div/div/div/div"))
+						.getText();
+				assert (produtoLista.contains(Produto));
 
-			System.out.println(element.getText());
+				System.out.println(element.getText());
+			}
+		} else {
+
+			List<WebElement> elements = TestBase.driver
+					.findElements(By.xpath("/html/body/div/header/div/div/div/div/div/div/div/div/div"));
+
+			for (WebElement element : elements) {
+				Thread.sleep(1000);
+
+				String produtoLista = TestBase.driver
+						.findElement(By.xpath("/html/body/div/header/div/div/div/div/div/div/div/div/div")).getText();
+				assert (produtoLista.contains(Produto));
+
+				System.out.println(element.getText());
+			}
 		}
 
-	}
+//		List<WebElement> elements = TestBase.driver 
+//				.findElements(By.xpath("/html/body/div/header/div/div/div/div/div/div/div/div/div"));
+//		                               
+//		for (WebElement element : elements) {
+//			Thread.sleep(1000);
+//
+//			String produtoLista = TestBase.driver
+//					.findElement(By.xpath("/html/body/div/header/div/div/div/div/div/div/div/div/div")).getText();
+//			assert (produtoLista.contains(Produto));
+//
+//			System.out.println(element.getText());
+//		}
 
+	}
 }

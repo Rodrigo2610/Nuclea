@@ -21,3 +21,4 @@ Feature: Pesquisa Amazon Firefox
     Examples: 
       | produto |
       | sab     |
+      | ps5     |
