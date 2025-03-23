@@ -36,7 +36,7 @@ public class PesquisaAmazon extends Testrunner implements TestData {
 	public void que_eu_acesse_a_pagina_da_amazon_via_chrome(String URL) throws Throwable {
 		TestBase.Chrome(URL);
 	}
-	
+
 	@Given("^que eu acesse a pagina da amazon \"([^\"]*)\" via mobile$")
 	public void que_eu_acesse_a_pagina_da_amazon_via_mobile(String URL) throws Throwable {
 		TestBase.Mobile(URL);
@@ -64,9 +64,7 @@ public class PesquisaAmazon extends Testrunner implements TestData {
 	public void sera_exibida_a_tela_do_produto_pesquisado(String Produto) throws Throwable {
 		Thread.sleep(500);
 		assertEquals("\"" + Produto + "\"", ElementosPesquisa.LabelPesquisaProduto(TestBase.driver).getText());
-//		Produto.contains("\"" + Produto + "\"");
 
-//		TestBase.driver.findElement(By.xpath("//html/body/div/div/div/div/div/span/div/div/div/div/div/div/span/div/div/div/div/a/h2/span/[contains(text(),'"+Produto+"')]")).click();	
 	}
 
 	@When("^Eu informar as iniciais de um produto \"([^\"]*)\" na barra de pesquisa$")

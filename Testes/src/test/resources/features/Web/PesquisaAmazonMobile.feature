@@ -2,8 +2,8 @@
 Feature: Pesquisa Amazon Mobile
   Validar pesquisa no site amazon
 
-  Background:
-  Given que eu acesse a pagina da amazon "https://www.amazon.com.br/" via mobile
+  Background: 
+    Given que eu acesse a pagina da amazon "https://www.amazon.com.br/" via mobile
 
   Scenario Outline: Pesquisar Produto
     Given Que eu informar o nome do produto "<produto>" na barra de pesquisa

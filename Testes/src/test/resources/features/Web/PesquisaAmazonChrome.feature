@@ -2,8 +2,8 @@
 Feature: Pesquisa Amazon Chrome
   Validar pesquisa no site amazon
 
-  Background:
-  Given que eu acesse a pagina da amazon "https://www.amazon.com.br/" via chrome
+  Background: 
+    Given que eu acesse a pagina da amazon "https://www.amazon.com.br/" via chrome
 
   Scenario Outline: Pesquisar Produto
     Given Que eu informar o nome do produto "<produto>" na barra de pesquisa
